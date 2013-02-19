@@ -72,7 +72,7 @@ public final class OAuth {
     public static final String OAUTH_ACCESS_TOKEN = "access_token";
     public static final String OAUTH_EXPIRES_IN = "expires_in";
     public static final String OAUTH_REFRESH_TOKEN = "refresh_token";
-    
+
     public static final String OAUTH_TOKEN_TYPE = "token_type";
 
     public static final String OAUTH_TOKEN = "oauth_token";
@@ -82,6 +82,8 @@ public final class OAuth {
 
     public static final ParameterStyle DEFAULT_PARAMETER_STYLE = ParameterStyle.HEADER;
     public static final TokenType DEFAULT_TOKEN_TYPE = TokenType.BEARER;
-    
+
     public static final String OAUTH_VERSION_DIFFER = "oauth_signature_method";
+
+    public static final String OAUTH_THIRD_PARTY_PROVIDER = "provider";
 }

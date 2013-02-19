@@ -75,7 +75,7 @@ public class OAuthTokenRequest extends OAuthRequest {
     public String getRefreshToken() {
         return getParam(OAuth.OAUTH_REFRESH_TOKEN);
     }
-    
+
     public String getCode() {
         return getParam(OAuth.OAUTH_CODE);
     }
@@ -83,5 +83,9 @@ public class OAuthTokenRequest extends OAuthRequest {
     public String getGrantType() {
         return getParam(OAuth.OAUTH_GRANT_TYPE);
     }
+
+	public String getProvider(){
+		return getParam("provider");
+	}
 
 }

@@ -248,6 +248,20 @@
     <connection>scm:svn:https://svn.apache.org/repos/asf/incubator/amber/trunk/</connection>
     <url>https://svn.apache.org/repos/asf/incubator/amber/trunk/</url>
   </scm>
+
+  <distributionManagement>
+    <repository>
+      <id>nexus-releases</id>
+      <name>Internal Release Repository</name>
+      <url>http://dev.nrcp.sohu.com/nexus/content/repositories/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <name>Internal Snapshot Repository</name>
+      <url>http://dev.nrcp.sohu.com/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+
   <issueManagement>
     <system>JIRA</system>
     <url>https://issues.apache.org/jira/browse/AMBER</url>
@@ -262,7 +276,7 @@
        <sendOnFailure>true</sendOnFailure>
        <sendOnSuccess>false</sendOnSuccess>
        <sendOnWarning>false</sendOnWarning>
-       <configuration><address>amber-dev@incubator.apache.org</address></configuration> 
+       <configuration><address>amber-dev@incubator.apache.org</address></configuration>
      </notifier>
    </notifiers>
   </ciManagement>

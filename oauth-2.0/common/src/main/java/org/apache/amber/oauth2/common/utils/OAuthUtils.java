@@ -167,6 +167,36 @@ public final class OAuthUtils {
             .description(message);
     }
 
+	public static OAuthProblemException handleOAuthProblemException(int responseStatus, String message)
+	{
+		return OAuthProblemException.error(OAuthError.TokenResponse.INVALID_REQUEST).responseStatus(responseStatus).description(message);
+	}
+
+	public static OAuthProblemException handleServerError(int responseStatus, String message)
+	{
+		return OAuthProblemException.error(OAuthError.CodeResponse.SERVER_ERROR).responseStatus(responseStatus).description(message);
+	}
+
+	public static OAuthProblemException handleInvalidClient()
+	{
+		return OAuthProblemException.error(OAuthError.TokenResponse.INVALID_CLIENT).responseStatus(403);
+	}
+
+	public static OAuthProblemException handleUnauthorizedClient()
+	{
+		return OAuthProblemException.error(OAuthError.TokenResponse.UNAUTHORIZED_CLIENT).responseStatus(403);
+	}
+
+	public static OAuthProblemException handleInvalidGrant()
+	{
+		return OAuthProblemException.error(OAuthError.TokenResponse.INVALID_GRANT).responseStatus(403);
+	}
+
+	public static OAuthProblemException handleUnsupportedGrantType()
+	{
+		return OAuthProblemException.error(OAuthError.TokenResponse.UNSUPPORTED_GRANT_TYPE).responseStatus(400);
+	}
+
     /**
      * Creates OAuthProblemException that contains set of missing oauth parameters
      *
