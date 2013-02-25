@@ -27,6 +27,7 @@ import org.apache.amber.oauth2.as.validator.AuthorizationCodeValidator;
 import org.apache.amber.oauth2.as.validator.ClientCredentialValidator;
 import org.apache.amber.oauth2.as.validator.PasswordValidator;
 import org.apache.amber.oauth2.as.validator.RefreshTokenValidator;
+import org.apache.amber.oauth2.as.validator.ThirdPartyCodeValidator;
 import org.apache.amber.oauth2.common.OAuth;
 import org.apache.amber.oauth2.common.exception.OAuthProblemException;
 import org.apache.amber.oauth2.common.exception.OAuthSystemException;
@@ -52,6 +53,7 @@ public class OAuthTokenRequest extends OAuthRequest {
         validators.put(GrantType.PASSWORD.toString(), PasswordValidator.class);
         validators.put(GrantType.CLIENT_CREDENTIALS.toString(), ClientCredentialValidator.class);
         validators.put(GrantType.AUTHORIZATION_CODE.toString(), AuthorizationCodeValidator.class);
+        validators.put(GrantType.THIRD_PARTY_CODE.toString(), ThirdPartyCodeValidator.class);
         validators.put(GrantType.REFRESH_TOKEN.toString(), RefreshTokenValidator.class);
         String requestTypeValue = getParam(OAuth.OAUTH_GRANT_TYPE);
         if (OAuthUtils.isEmpty(requestTypeValue)) {
@@ -85,7 +87,7 @@ public class OAuthTokenRequest extends OAuthRequest {
     }
 
 	public String getProvider(){
-		return getParam("provider");
+		return getParam(OAuth.OAUTH_THIRD_PARTY_PROVIDER);
 	}
 
 }

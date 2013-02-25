@@ -30,8 +30,10 @@ public enum GrantType {
     // NONE("none"),
     AUTHORIZATION_CODE("authorization_code"),
     PASSWORD("password"),
+    THIRD_PARTY_CODE("third_party_code"),
     REFRESH_TOKEN("refresh_token"),
     CLIENT_CREDENTIALS("client_credentials");
+
 
     private String grantType;
 
