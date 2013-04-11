@@ -120,6 +120,11 @@ public class OAuthASResponse extends OAuthResponse {
             return this;
         }
 
+        public OAuthTokenResponseBuilder setUserId(long userId) {
+        	this.parameters.put(OAuth.OAUTH_USER_ID, userId);
+        	return this;
+        }
+
         public OAuthTokenResponseBuilder setParam(String key, String value) {
             this.parameters.put(key, value);
             return this;

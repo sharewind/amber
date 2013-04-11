@@ -86,4 +86,7 @@ public final class OAuth {
     public static final String OAUTH_VERSION_DIFFER = "oauth_signature_method";
 
     public static final String OAUTH_THIRD_PARTY_PROVIDER = "provider";
+
+    public static final String OAUTH_USER_ID = "user_id";
+    
 }
